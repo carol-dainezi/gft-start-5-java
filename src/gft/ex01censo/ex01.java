@@ -48,7 +48,7 @@ public class ex01 {
         System.out.printf("Média de salário da população: %.2f", somaSalario/populacao);
         System.out.println("\nMédia do número de filhos: " + somaFilhos/populacao);
         System.out.printf("Maior salário: R$" + maiorSalario);
-        double porcentagem = salarioBaixo/populacao *100;
+        double porcentagem = salarioBaixo/(populacao*100);
         System.out.println("\nPercentual de pessoas com salário de até R$350,00: " + porcentagem);
     }
 }
