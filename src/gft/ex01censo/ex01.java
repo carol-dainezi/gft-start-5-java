@@ -23,29 +23,32 @@ public class ex01 {
         int populacao = 0;
         int salarioBaixo = 0;
 
+
         while(true) {
             System.out.println("Digite o seu salário: ");
             salario = scanner.nextDouble();
 
-            if (salario > maiorSalario) {
-                maiorSalario = salario;
-            }
-
             System.out.println("Digite o número de filhos: ");
             filhos = scanner1.nextInt();
             System.out.println("Deseja parar o programa? Y/N: ");
-            if (scanner2.nextLine().equalsIgnoreCase("Y")) break;
-
             somaSalario += salario;
             populacao ++;
             somaFilhos += filhos;
 
+            if (salario <= 350) {
+                salarioBaixo = salarioBaixo + 1;
+            }
 
+            if (salario > maiorSalario) {
+                maiorSalario = salario;
+            }
+            if (scanner2.nextLine().equalsIgnoreCase("Y")) break;
         }
 
         System.out.printf("Média de salário da população: %.2f", somaSalario/populacao);
         System.out.println("\nMédia do número de filhos: " + somaFilhos/populacao);
         System.out.printf("Maior salário: R$" + maiorSalario);
-        System.out.println("\nPercentual de pessoas com salário de até R$350,00: " + salarioBaixo/populacao*100 + "%.");
+        double porcentagem = salarioBaixo/populacao *100;
+        System.out.println("\nPercentual de pessoas com salário de até R$350,00: " + porcentagem);
     }
 }
